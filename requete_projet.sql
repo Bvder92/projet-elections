@@ -122,5 +122,5 @@ update inscription set nbinscrits = nbinscrits +(0.2 *nbinscrits) where ref_bure
 -- 5/ Dans vote, ne garder que les candidats ayant plus de 0 votes -- 
 delete from vote where nb_votes = 0;
 
--- 6/ Modification du mois dans la date du scrutin des legislatives --
+-- 6/ Modification du mois dans la date du scrutin des legislatives ---
 update election set date_scrutin = DATE_ADD(date_scrutin, INTERVAL -4 MONTH) where month(date_scrutin) = 10 and libelle_scrutin like "Législatives%";
